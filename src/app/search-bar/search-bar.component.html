@@ -1,0 +1,12 @@
+<input type="text" [formControl]="searchControl" />
+<ul>
+  @for (result of results$ | async; track $index) {
+    <li>{{ result.title }}</li>
+  }
+  @empty {
+    <p>Type anything you want to search</p>
+  }
+</ul>
+<!-- <ul>
+  <li *ngFor="let result of results$ | async">{{ result.title }}</li>
+</ul> -->
